@@ -1,0 +1,2 @@
+[{"title":"Los 7 maridos de Evelyn Hugo","price":2500,"thumbnail":"link1","id":0},{"title":"La reina roja","price":1400,"thumbnail":"link2","id":1},
+{"title":"Cazadores de sombras","price":2900,"thumbnail":"link3","id":2}]
