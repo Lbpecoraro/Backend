@@ -1,0 +1,24 @@
+<h1>Tabla de productos</h1>
+{{#if productos}}
+
+<table>
+    <thead>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Thumbnail</th>
+    </thead>
+    <tbody>
+        {{#each productos}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>$ {{this.price}}</td>
+            <td><img src={{this.thumbnail}} alt="" style="width:50px; height:50px"></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{else}}
+<h2>No hay productos</h2>
+{{/if}}
+<a href="http://localhost:8080/">Volver al formulario</a>

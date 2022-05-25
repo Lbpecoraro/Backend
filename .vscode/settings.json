@@ -1,4 +1,4 @@
 {
-    "editor.defaultFormatter": "HookyQR.beautify",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
 }

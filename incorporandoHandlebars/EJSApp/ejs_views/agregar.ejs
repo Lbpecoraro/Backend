@@ -1,0 +1,26 @@
+<h1>Tabla de productos</h1>
+
+<% if (productos.length > 0){ %>
+
+<table>
+    <thead>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Thumbnail</th>
+    </thead>
+    <tbody>
+        <%productos.forEach(prod => { %>
+        <tr>
+            <td><%= prod.title %></td>
+            <td>$ <%= this.price %></td>
+            <td><img src=<%=prod.thumbnail %> alt="" style="width:50px; height:50px"></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+<%}else{%>
+
+<h2>No hay productos</h2>
+<% } %>
+<a href="http://localhost:8080/">Volver al formulario</a>

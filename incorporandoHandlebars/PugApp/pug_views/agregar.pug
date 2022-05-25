@@ -1,0 +1,21 @@
+extends index.pug 
+
+block contenido
+    h1 Productos 
+
+    if productos[0].title
+        table 
+            thead 
+                th Title 
+                th Price 
+                th Thumbnail 
+            tbody 
+                each prod in productos 
+                    tr 
+                        td= prod.title 
+                        td= "$" + prod.price 
+                        td
+                            img(style="width:50px; height:50px" src=prod.thumbnail)
+    else 
+        h2 No hay productos agregados 
+    a(href="http://localhost:8080/") Volver al formulario
