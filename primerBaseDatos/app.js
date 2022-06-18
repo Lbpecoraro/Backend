@@ -23,6 +23,30 @@ const knexMySQL = Knex({
     client: 'mysql',
     connection: options
 })
+
+const createTableMySQL = async () => {
+    await knexMySQL.schema.createTable('productos',(table) => {
+        table.increments('id').primary().notNullable();
+        table.string('title').notNullable();
+        table.string('thumbnail').notNullable();
+        table.integer('price').notNullable();
+    }).catch((err) => {
+        console.log('ERROR: ' + err);
+    })
+}
+createTableMySQL();
+const createTableSQLite = async () => {
+    await knexSQLite.schema.createTable('messages',(table) => {
+        table.increments('id').primary().notNullable();
+        table.string('author').notNullable();
+        table.string('text').notNullable();
+        table.integer('fyh').notNullable();
+    }).catch((err) => {
+        console.log('ERROR: ' + err);
+    })
+}
+createTableSQLite();
+
 app.engine(
     'hbs',
     engine({
@@ -30,6 +54,7 @@ app.engine(
         defaultLayout: 'index.hbs',
     })
 );
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -90,8 +115,6 @@ const readMessage = async () => {
         return contenido;
     }
 }
-
-
 
 const httpServer = new HttpServer(app);
 const socketServer = new SocketServer(httpServer);
