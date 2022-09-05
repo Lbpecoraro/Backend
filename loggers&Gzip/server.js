@@ -57,7 +57,7 @@ const parsear = yargs(argumentos).default({
     m: "modo"
 }).argv;
 
-let puerto = parsear.p || Number(process.argv[2]) || 8080
+let puerto = process.env.PORT || 8080
 
 const info = (req,res) => {
     const info = {
