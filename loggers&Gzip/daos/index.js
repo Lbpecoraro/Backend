@@ -6,7 +6,7 @@ const { MongoClient } = require('mongodb');
 let contenedorCarritoImportado;
 let conectionMongo;
 
-const mongo = new MongoClient(config.mongodb.mongo);
+const mongo = new MongoClient("mongodb+srv://lbpecoraro:lucia3600@cluster0.pi3nb2l.mongodb.net/?retryWrites=true&w=majority");
 (async () => {
     await mongo.connect();
 })();
